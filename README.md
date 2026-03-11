@@ -68,7 +68,7 @@ npm start
 
 ### 4. Open the app
 
-Visit [http://localhost:5173](http://localhost:5173) in your browser.
+Visit [http://localhost:5173](http://localhost:3001) in your browser.
 
 ## 📄 Example .env Files
 
