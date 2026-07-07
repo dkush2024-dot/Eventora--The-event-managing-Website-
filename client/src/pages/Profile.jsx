@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Spinner from '../components/Spinner';
 import { fetchUserProfile, updateUserProfile, requestOrganizer } from '../services/userService';
 import { notifyError, notifySuccess } from '../utils/toastUtils';

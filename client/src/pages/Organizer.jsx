@@ -9,7 +9,6 @@ const OrganizerDashboard = () => {
   const prev_page = localStorage.getItem("page");
   const [events, setEvents] = useState([]);
   const [page, setPage] = useState(prev_page == null ? 1 : Number(prev_page));
-  const [totalPages, setTotalPages] = useState(1);
   const [search, setSearch] = useState("");
   const [eventType, setEventType] = useState("");
   const [location, setLocation] = useState("");
@@ -30,7 +29,6 @@ const OrganizerDashboard = () => {
       };
       const res = await getOrganizersEvents(params);
       setEvents(res.events);
-      setTotalPages(res.totalPages);
     } catch (err) {
       console.error(err);
       notifyError('Event Fetching Failed!')

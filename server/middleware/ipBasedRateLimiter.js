@@ -23,8 +23,9 @@ const ipBasedRateLimiter = async (req, res, next) => {
 
     next();
   } catch (err) {
-    console.error('IP Rate limiter error:', err);
-    res.status(500).json({ error: 'Internal server error' });
+    // If Redis is down, let the request through instead of blocking
+    console.error('⚠️  IP Rate limiter error (passing through):', err.message);
+    next();
   }
 };
 

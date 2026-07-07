@@ -34,7 +34,8 @@ const EventView = () => {
         }
         setEvent(res);
         // console.log(res);
-      } catch (err) {
+      } catch (error) {
+        console.error(error);
         setError("Failed to load event");
         notifyError("failed to fetch event data!");
       } finally {

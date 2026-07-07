@@ -6,7 +6,11 @@
   "type": "commonjs",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "create-admin": "node scripts/createAdmin.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "author": "Kushagra Mall",
   "license": "ISC",
@@ -20,7 +24,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.0",
     "node-cron": "^4.0.6",
-    "nodemailer": "^7.0.3",
+    "nodemailer": "^7.0.3"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }

@@ -1,7 +1,6 @@
 const cron = require('node-cron');
 const Registration = require('../models/Registration');
 const Event = require('../models/Event');
-const User = require('../models/User');
 const sendEmail = require('../utils/sendEmail');
 
 const emailReminder = async () => {

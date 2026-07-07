@@ -55,7 +55,8 @@ const EditEvent = () => {
           setImage(res.image);
           setPreview(res.image);
           notifySuccess('Event data fetched successfully!')
-        } catch (err) {
+        } catch (error) {
+          console.error(error);
           setError("Failed to load event");
           notifyError('Failed to fetch event data!')
         } finally {

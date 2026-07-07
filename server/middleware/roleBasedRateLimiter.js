@@ -14,7 +14,7 @@ const roleBasesRateLimiter = async (req, res, next) => {
     const id = user?.id || req.ip;
     const role = user?.role || 'Participant';
     const key = `rate_limit:${id}`;
-    const limit = ROLE_LIMITS[role] || ROLE_LIMITS.user;
+    const limit = ROLE_LIMITS[role] || ROLE_LIMITS.Participant;
 
     const reqCount = await redis.incr(key);
 
@@ -32,8 +32,9 @@ const roleBasesRateLimiter = async (req, res, next) => {
 
     next();
   } catch (err) {
-    console.error('Rate limiter error:', err);
-    return res.status(500).json({ error: 'Internal server error' });
+    // If Redis is down, let the request through instead of blocking
+    console.error('⚠️  Role rate limiter error (passing through):', err.message);
+    next();
   }
 };
 

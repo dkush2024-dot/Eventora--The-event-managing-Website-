@@ -4,7 +4,6 @@ import { loginUser } from '../store/authSlice';
 import { googleLoginUser, registerUser } from '../services/authService';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { uploadImageToCloudinary } from '../utils/uploadImageToCloudinary';
